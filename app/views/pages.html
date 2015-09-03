@@ -1,0 +1,48 @@
+<ol class="breadcrumb">
+    <li class="active">My Pages</li>
+</ol>
+        
+<div class="panel panel-default listing-panel">
+    <div class="panel-heading">
+        <h4>Responsive Pages</h4>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-12">
+                <a class="btn btn-primary pull-right" ng-click="go('/pages/new')">
+                    <span class="glyphicon glyphicon-plus"> </span>
+                    Create New Responsive Page
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Pages table -->
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th class="col-md-3">Title</th>
+                            <th class="col-md-4">Description</th>
+                            <th class="col-md-4">Published on</th>
+                            <th class="col-md-1"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="cursor-pointer" ng-repeat="page in pages">
+                            <td>{{page.title}}</td>
+                            <td>{{page.description}}</td>
+                            <td>{{page.publishedOn | amDateFormat:'D MMM YYYY'}}</td>
+                            <td>
+                                <a class="btn listing-btn"> 
+                                   <span class="glyphicon glyphicon-trash"></span>
+                                    Delete
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    
+    </div>
+</div>
