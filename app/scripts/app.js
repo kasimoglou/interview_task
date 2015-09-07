@@ -14,7 +14,9 @@ angular.module('interviewTaskApp', [
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'angularMoment'
+    'angularMoment',
+    'validator',
+    'validator.rules'
   ])
   .config(function ($routeProvider) {
     $routeProvider

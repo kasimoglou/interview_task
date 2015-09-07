@@ -8220,8 +8220,13 @@ table {
   margin: 20px 0;
 }
 
+/* line 18, ../../app/styles/main.scss */
+textarea {
+  resize: none;
+}
+
 /* Everything but the jumbotron gets side spacing for mobile first views */
-/* line 19, ../../app/styles/main.scss */
+/* line 23, ../../app/styles/main.scss */
 .header,
 .footer {
   padding-left: 15px;
@@ -8229,13 +8234,13 @@ table {
 }
 
 /* Custom page header */
-/* line 26, ../../app/styles/main.scss */
+/* line 30, ../../app/styles/main.scss */
 .header {
   border-bottom: 1px solid #e5e5e5;
   margin-bottom: 10px;
   /* Make the masthead heading the same height as the navigation */
 }
-/* line 31, ../../app/styles/main.scss */
+/* line 35, ../../app/styles/main.scss */
 .header h3 {
   margin-top: 0;
   margin-bottom: 0;
@@ -8244,29 +8249,29 @@ table {
 }
 
 /* Custom page footer */
-/* line 40, ../../app/styles/main.scss */
+/* line 44, ../../app/styles/main.scss */
 .footer {
   padding-top: 19px;
   color: #777;
   border-top: 1px solid #e5e5e5;
 }
 
-/* line 46, ../../app/styles/main.scss */
+/* line 50, ../../app/styles/main.scss */
 .container-narrow > hr {
   margin: 30px 0;
 }
 
-/* line 50, ../../app/styles/main.scss */
+/* line 54, ../../app/styles/main.scss */
 td .btn {
   padding-top: 0;
 }
 
-/* line 54, ../../app/styles/main.scss */
+/* line 58, ../../app/styles/main.scss */
 .cursor-pointer {
   cursor: pointer;
 }
 
-/* line 58, ../../app/styles/main.scss */
+/* line 62, ../../app/styles/main.scss */
 .listing-panel {
   min-height: 700px;
 }

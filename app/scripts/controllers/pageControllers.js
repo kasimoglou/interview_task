@@ -28,6 +28,12 @@ angular.module('interviewTaskApp')
 
     .controller('NewPageController', ['$scope', '$location', function($scope, $location) {
         
+        $scope.page = {};
+
+        $scope.createPage = function() {
+            console.log('Creating new page');
+        };
+        
         $scope.go = function(path) {
             $location.path(path);
         };

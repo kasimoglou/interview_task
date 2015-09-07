@@ -2,6 +2,60 @@
     <li><a class="cursor-pointer" ng-click="go('/pages')">My Pages</a></li>
     <li class="active">New Page</li>
 </ol>
-<div>
-    
+<div class="panel panel-default listing-panel">
+    <div class="panel-heading">
+        <h4>New Responsive Page</h4>
+    </div>
+    <div class="panel-body">
+        <div class="well well-sm">
+            <h5>The fields with an asterisk <span class="text-danger">*</span> are required.</h5>
+        </div>
+        <form name="newPageForm">
+            <div class="form-group">
+                <label for="pageTitle" class="control-label">Title <span class="text-danger">*</span></label>
+                <input type="text" id="pageTitle" ng-model="page.title" 
+                       validator="[required]" placeholder="Enter page's title" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="pageDesc" class="control-label">Description</label>
+                <textarea type="text" id="pageDesc" ng-model="page.description" rows="4" class="form-control"
+                          placeholder="Enter page's description"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="pageType" class="control-label">Type <span class="text-danger">*</span></label>
+                <select id="pageType" class="form-control" ng-model="page.type" validator="[required]">
+                    <option class="text-muted" value="">Select page type</option>
+                    <option value="0">Menu</option>
+                    <option value="1">Events</option>
+                    <option value="2">Content</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-2">
+                        <label for="pageActive" class="control-label ">Is page active</label>
+                    </div>
+                    <div class="col-md-1">
+                        <label>
+                            <input id="pageActive" type="radio" value="true" ng-model="page.isActive"> Yes
+                        </label>
+                    </div>
+                    <div class="col-md-1">
+                        <label>
+                            <input type="radio" value="false" ng-model="page.isActive"> No
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="pagePublishedOn" class="control-label">To be published on</label>
+                        <input type="text" id="pagePublishedOn" my-datepicker ng-model="page.publishedOn" class="form-control">
+                    </div>
+                </div>
+            </div>
+        </form>
+        <a class="btn btn-primary btn-block" ng-click="createPage()">Create Page</a>
+    </div>
 </div>
