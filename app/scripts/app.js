@@ -1,13 +1,5 @@
 'use strict';
-
-/**
- * @ngdoc overview
- * @name interviewTaskApp
- * @description
- * # interviewTaskApp
- *
- * Main module of the application.
- */
+/* global $ */
 angular.module('interviewTaskApp', [
     'ngAnimate',
     'ngResource',
@@ -31,4 +23,46 @@ angular.module('interviewTaskApp', [
       .otherwise({
         redirectTo: '/pages'
       });
+  })
+    .config(function($validatorProvider) {
+        
+        $validatorProvider.register('maxLength', {
+            validator: function(value, scope, element, attrs) {
+                if (typeof value === 'undefined') {
+                    return true;
+                }
+                
+                return (value.length > attrs.maxLength) ? false : true; 
+            },
+            error: function(value, scope, element, attrs) {
+                var $label, label, parent, _i, _len, _ref, _results;
+                parent = $(element).parent();
+                _results = [];
+                while (parent.length !== 0) {
+                    if (parent.hasClass('form-group')) {
+                        parent.addClass('has-error');
+                        _ref = parent.find('label');
+                        for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+                            label = _ref[_i];
+                            if ($(label).hasClass('error')) {
+                              $(label).remove();
+                            }
+                        }
+                        $label = $('<label class=\'control-label error\'>This field should be at most ' + 
+                              attrs.maxLength + ' characters long.</label>');
+                        if (attrs.id) {
+                            $label.attr('for', attrs.id);
+                        }
+                        if ($(element).parent().hasClass('input-group')) {
+                            $(element).parent().parent().append($label);
+                        } else {
+                            $(element).parent().append($label);
+                        }
+                        break;
+                    }
+                    _results.push(parent = parent.parent());
+                }
+                return _results;
+            }
+        });
   });

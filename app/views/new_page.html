@@ -14,12 +14,12 @@
             <div class="form-group">
                 <label for="pageTitle" class="control-label">Title <span class="text-danger">*</span></label>
                 <input type="text" id="pageTitle" ng-model="page.title" 
-                       validator="[required]" placeholder="Enter page's title" class="form-control">
+                       validator="[required, maxLength]" max-length="50" placeholder="Enter page's title" class="form-control">
             </div>
             <div class="form-group">
                 <label for="pageDesc" class="control-label">Description</label>
                 <textarea type="text" id="pageDesc" ng-model="page.description" rows="4" class="form-control"
-                          placeholder="Enter page's description"></textarea>
+                          validator="[maxLength]" max-length="200" placeholder="Enter page's description"></textarea>
             </div>
             <div class="form-group">
                 <label for="pageType" class="control-label">Type <span class="text-danger">*</span></label>

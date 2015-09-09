@@ -33,7 +33,7 @@
                             <td>{{page.description}}</td>
                             <td>{{page.publishedOn | amDateFormat:'D MMM YYYY'}}</td>
                             <td>
-                                <a class="btn listing-btn"> 
+                                <a class="btn listing-btn" ng-click="deletePage(page.id)"> 
                                    <span class="glyphicon glyphicon-trash"></span>
                                     Delete
                                 </a>

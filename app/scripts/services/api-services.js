@@ -1,12 +1,19 @@
 'use strict';
 
 angular.module('interviewTaskApp')
-    .factory('API', ['$http', function($http) {
+    .factory('API', ['$http', '$window', function($http, $window) {
 
         var urlPrefix = 'http://pagesmanagement.azurewebsites.net';
 
         function extractResponse(response) {
             return response.data;
+        }
+        
+        function reportError(response) {
+            var errorMessage = response.errorMessage || '';
+            
+            $window.alert('An unexpected error occured.' + errorMessage);
+            return null;
         }
         
         var API = {
@@ -18,7 +25,7 @@ angular.module('interviewTaskApp')
                     data: page
                 };
 
-                return $http(config).then(extractResponse);
+                return $http(config).then(extractResponse, reportError);
             },
             pageRead: function(id) {
                 var config = {
@@ -26,7 +33,7 @@ angular.module('interviewTaskApp')
                     method: 'GET'
                 };
 
-                return $http(config).then(extractResponse);;
+                return $http(config).then(extractResponse, reportError);
             },
             pageUpdate: function(id, page) {
                 var config = {
@@ -35,7 +42,7 @@ angular.module('interviewTaskApp')
                     data: page
                 };
 
-                return $http(config).then(extractResponse);;
+                return $http(config).then(extractResponse, reportError);
             },
             pageDelete: function(id) {
                 var config = {
@@ -43,7 +50,7 @@ angular.module('interviewTaskApp')
                     method: 'DELETE'
                 };
 
-                return $http(config).then(extractResponse);;
+                return $http(config).then(extractResponse, reportError);
             },
             pagesRead: function() {
                 var config = {
@@ -51,7 +58,7 @@ angular.module('interviewTaskApp')
                     method: 'GET'
                 };
 
-                return $http(config).then(extractResponse);;
+                return $http(config).then(extractResponse, reportError);
             }
 
         };

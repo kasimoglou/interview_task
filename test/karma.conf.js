@@ -36,6 +36,7 @@ module.exports = function(config) {
       'bower_components/angular-validator/dist/angular-validator-rules.js',
       'bower_components/bootstrap/dist/js/bootstrap.js',
       'bower_components/jquery-ui/jquery-ui.js',
+      'bower_components/underscore/underscore.js',
       // endbower
       "app/scripts/**/*.js",
       "test/mock/**/*.js",
