@@ -20,6 +20,10 @@ angular.module('interviewTaskApp', [
         templateUrl: 'views/new_page.html',
         controller: 'NewPageController'
       })
+      .when('/pages/:id', {
+        templateUrl: 'views/edit_page.html',
+        controller: 'EditPageController'
+      })
       .otherwise({
         redirectTo: '/pages'
       });

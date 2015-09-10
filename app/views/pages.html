@@ -28,12 +28,12 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="cursor-pointer" ng-repeat="page in pages">
+                        <tr class="cursor-pointer" ng-repeat="page in pages" ng-click="go('/pages/' + page.id)">
                             <td>{{page.title}}</td>
                             <td>{{page.description}}</td>
                             <td>{{page.publishedOn | amDateFormat:'D MMM YYYY'}}</td>
                             <td>
-                                <a class="btn listing-btn" ng-click="deletePage(page.id)"> 
+                                <a class="btn listing-btn" ng-click="deletePage(page.id); $event.stopPropagation()"> 
                                    <span class="glyphicon glyphicon-trash"></span>
                                     Delete
                                 </a>

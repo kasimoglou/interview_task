@@ -1,0 +1,58 @@
+<div class="well well-sm">
+    <h5>The fields with an asterisk <span class="text-danger">*</span> are required.</h5>
+</div>
+<form name="pageForm">
+    <div class="form-group">
+        <label for="pageTitle" class="control-label">Title <span class="text-danger">*</span></label>
+        <input type="text" id="pageTitle" ng-model="page.title" 
+               validator="[required, maxLength]" max-length="50" placeholder="Enter page's title" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="pageDesc" class="control-label">Description</label>
+        <textarea type="text" id="pageDesc" ng-model="page.description" rows="4" class="form-control"
+                  validator="[maxLength]" max-length="200" placeholder="Enter page's description"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="pageType" class="control-label">Type<span class="text-danger">*</span></label>
+        <select id="pageType" class="form-control" ng-model="page.type" validator="[required]"
+                ng-options="pageType.value as pageType.name for pageType in pageTypes">
+        </select>
+    </div>
+    <div class="row">
+        <!--div class="col-md-6">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="pagePublishedOn" class="control-label">To be published on</label>
+                        <input type="text" id="pagePublishedOn" my-datepicker ng-model="page.publishedOn" class="form-control">
+                    </div>
+                </div>
+            </div>
+        </div-->
+        <div class="col-md-6">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-12">
+                        <label for="pageActive" class="control-label ">Is page active</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="checkbox">
+                            <label>
+                                <input id="pageActive" type="radio" ng-value="true" ng-model="page.isActive"> Yes
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="checkbox">
+                            <label>
+                                <input type="radio" ng-value="false" ng-model="page.isActive"> No
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

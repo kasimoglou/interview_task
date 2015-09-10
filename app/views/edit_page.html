@@ -1,16 +1,16 @@
 <ol class="breadcrumb">
     <li><a class="cursor-pointer" ng-click="go('/pages')">My Pages</a></li>
-    <li class="active">New Page</li>
+    <li class="active">{{page.title}}</li>
 </ol>
 <div class="panel panel-default listing-panel">
     <div class="panel-heading">
-        <h4>New Responsive Page</h4>
+        <h4>Edit Responsive Page</h4>
     </div>
     <div class="panel-body">
         <page-form page="page"></page-form>
         <div class="row">
             <div class="col-md-10">
-                <a class="btn btn-primary btn-block" ng-click="createPage()">Create Page</a>
+                <a class="btn btn-primary btn-block" ng-click="updatePage()">Update Page</a>
             </div>
             <div class="col-md-2">
                 <a class="btn btn-default btn-block" ng-click="cancel()">Cancel</a>
