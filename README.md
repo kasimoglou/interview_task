@@ -12,4 +12,4 @@
 open the application in your browser, if not visit `localhost:9000` and... Voila! 
 (except I'm forgetting anything)
 
-Testing, coming soon...
+To run tests run `grunt test`
