@@ -3,8 +3,8 @@
 ## Installation steps:
 
 1. Install Node.js and npm
-    * Ubuntu: `sudo apt-get install nodejs` , `sudo apt-get install npm
-    * Windows: Find your way [here](https://nodejs.org/en/)`
+    * Ubuntu: `sudo apt-get install nodejs` , `sudo apt-get install npm`
+    * Windows: Find your way [here](https://nodejs.org/en/)
 2. Install bower globally using npm: `npm install -g bower`
 3. Install grunt globally using npm: `npm install -g grunt-cli`
 4. Inside *interview_task* folder run `npm install` and `bower install`
